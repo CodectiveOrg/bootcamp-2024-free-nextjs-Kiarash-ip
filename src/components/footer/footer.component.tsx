@@ -43,23 +43,17 @@ export default function FooterComponent(): ReactElement {
         </ul>
         <ul className={styles.socials}>
           <li>
-            <Link href="https://t.me/Codective" target="_blank">
+            <Link href="#" target="_blank">
               <TelegramFill />
             </Link>
           </li>
           <li>
-            <Link
-              href="https://www.linkedin.com/in/bijanprogrammer/"
-              target="_blank"
-            >
+            <Link href="#" target="_blank">
               <LinkedinFill />
             </Link>
           </li>
           <li>
-            <Link
-              href="https://www.youtube.com/@BijanProgrammer"
-              target="_blank"
-            >
+            <Link href="#" target="_blank">
               <YoutubeFill />
             </Link>
           </li>
