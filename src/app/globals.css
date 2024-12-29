@@ -87,7 +87,7 @@ body {
   .tagline {
     background-color: var(--color-gray-16);
 
-    padding-block: 1rem;
+    padding-block: var(--fz-400);
 
     text-align: center;
   }
