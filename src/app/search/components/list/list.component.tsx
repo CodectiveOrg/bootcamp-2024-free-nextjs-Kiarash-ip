@@ -100,7 +100,7 @@ export default function ListComponent() {
   return (
     <div className={styles.list}>
       {doctors.filter(filter).map((doctor) => {
-        return <ItemComponent fullname={doctor.fullname} />;
+        return <ItemComponent key={doctor.id} fullname={doctor.fullname} />;
       })}
     </div>
   );

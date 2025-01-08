@@ -32,7 +32,7 @@ export default function FilterComponent({
       params.set(name, value);
       return params.toString();
     },
-    [searchParams],
+    [searchParams]
   );
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,9 +44,9 @@ export default function FilterComponent({
     <CardComponent>
       <div className={styles.filter}>
         <div className={styles.title}>{title}</div>
-        <form className={styles.filters} onChange={(e) => {}}>
+        <form className={styles.filters}>
           {filters.map((filter) => (
-            <label>
+            <label key={filter.value}>
               <input
                 type="radio"
                 value={filter.value}
