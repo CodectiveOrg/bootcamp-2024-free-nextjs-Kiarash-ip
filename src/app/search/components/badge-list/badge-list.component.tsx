@@ -22,7 +22,7 @@ export default function BadgeListComponent() {
       params.delete(name);
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   const deleteHandler = (key: string) => {
