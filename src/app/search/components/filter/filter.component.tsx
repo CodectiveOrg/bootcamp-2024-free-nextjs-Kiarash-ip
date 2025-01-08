@@ -35,10 +35,10 @@ export default function FilterComponent({
     [searchParams]
   );
 
-  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     router.push(pathname + "?" + createQueryString(filterKey, value));
-  }, []);
+  };
 
   return (
     <CardComponent>
