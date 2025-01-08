@@ -32,7 +32,7 @@ export default function FilterComponent({
       params.set(name, value);
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
