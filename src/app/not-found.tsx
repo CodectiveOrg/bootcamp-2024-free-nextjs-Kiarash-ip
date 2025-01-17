@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
+import { ReactElement, Suspense } from "react";
 
 import Image from "next/image";
 
 import notFoundImage from "@/assets/vectors/not-found.svg";
 
-import GlobalSearchBoxComponent from "@/components/search-box/search-box.component";
+import SearchComponent from "@/components/search-box/search-box.component";
 
 import styles from "./not-found.module.css";
 
@@ -23,7 +23,9 @@ export default function NotFound(): ReactElement {
         <Image src={notFoundImage} alt="" />
       </div>
       <div className={styles.search}>
-        <GlobalSearchBoxComponent />
+        <Suspense>
+          <SearchComponent />
+        </Suspense>
       </div>
     </div>
   );
