@@ -1,42 +1,41 @@
 import React, { Suspense } from "react";
 
+import SearchBoxComponent from "@/components/search-box/search-box.component";
+import FiltersSummaryComponent from "./components/filters-summary/filters-summary.component";
+import ExpertiseFilterComponent from "./components/expertise-filter/expertise-filter.component";
+import GenderFilterComponent from "./components/gender-filter/gender-filter.component";
+import DegreeFilterComponent from "./components/degree-filter/degree-filter.component";
+import SortComponent from "./components/sort/sort.component";
+import AppointmentFilterComponent from "./components/appointment-filter/appointment-filter.component";
+import ResultsComponent from "./components/results/results.component";
+
 import styles from "./page.module.css";
-import FilterComponent from "./components/filter/filter.component";
-import ListComponent from "./components/list/list.component";
-import { GENDERS, TURN_TYPES } from "./types/filter";
-import BadgeListComponent from "./components/badge-list/badge-list.component";
 
 export default function Page() {
   return (
     <div className={styles.page}>
-      <div className={styles.filters}>
+      <div className={styles.search}>
         <Suspense>
-          <BadgeListComponent />
-        </Suspense>
-        <Suspense>
-          <FilterComponent
-            title="جنسیت"
-            filterKey="gender"
-            filters={Object.entries(GENDERS).map((filter) => ({
-              label: filter[1],
-              value: filter[0],
-            }))}
-          />
-        </Suspense>
-        <Suspense>
-          <FilterComponent
-            title="خدمت"
-            filterKey="turn_type"
-            filters={Object.entries(TURN_TYPES).map((filter) => ({
-              label: filter[1],
-              value: filter[0],
-            }))}
-          />
+          <SearchBoxComponent />
         </Suspense>
       </div>
-      <Suspense>
-        <ListComponent />
-      </Suspense>
+      <div className={styles.filters}>
+        <Suspense>
+          <FiltersSummaryComponent />
+          <ExpertiseFilterComponent />
+          <GenderFilterComponent />
+          <DegreeFilterComponent />
+        </Suspense>
+      </div>
+      <div className={styles.toolbar}>
+        <SortComponent />
+        <AppointmentFilterComponent />
+      </div>
+      <div className={styles.results}>
+        <Suspense>
+          <ResultsComponent />
+        </Suspense>
+      </div>
     </div>
   );
 }
