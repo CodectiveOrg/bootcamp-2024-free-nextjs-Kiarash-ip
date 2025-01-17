@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement, Suspense } from "react";
 
 import SearchBoxComponent from "@/components/search-box/search-box.component";
 
@@ -13,7 +13,9 @@ export default function Home(): ReactElement {
         <MyDoctorLogo />
         دکتر من
       </h1>
-      <SearchBoxComponent />
+      <Suspense>
+        <SearchBoxComponent />
+      </Suspense>
       <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
