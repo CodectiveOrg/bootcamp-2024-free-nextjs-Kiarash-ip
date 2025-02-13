@@ -13,7 +13,7 @@ export default function ProgressComponent({ label, average }: Props) {
       <label>{label}</label>
       <div className={styles["progress-wrapper"]}>
         <progress value={(average / 5) * 100} max="100" />
-        <span>{average}</span>
+        <span>{average.toFixed(1)}</span>
       </div>
     </div>
   );

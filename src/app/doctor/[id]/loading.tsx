@@ -1,5 +1,10 @@
-import React from "react";
+import LoadingComponent from "@/components/loading/loading.component";
+import styles from "./loading.module.css";
 
 export default function Loading() {
-  return <div>Loading...</div>;
+  return (
+    <div className={styles.container}>
+      <LoadingComponent />
+    </div>
+  );
 }
