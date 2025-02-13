@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: var(--fz-300);
+
+  .average-rating {
+    background-color: var(--color-success);
+    padding: 0.15rem 0.5rem;
+    font-weight: 500;
+    border-radius: 999rem;
+    color: #fff;
+  }
+}
