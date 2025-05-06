@@ -15,6 +15,11 @@
 
     border-radius: var(--border-radius);
 
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      grid-template-areas: "header" "address" "actions";
+    }
+
     .header {
       grid-area: header;
 
@@ -66,6 +71,8 @@
         grid-area: badges;
 
         display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
         gap: 0.5rem;
 
         font-size: var(--fz-200);
@@ -110,9 +117,26 @@
 
       border-inline-start: 2px dashed var(--color-border);
 
+      @media screen and (max-width: 1024px) {
+        inline-size: 100%;
+
+        padding-inline-start: 0;
+        padding-block-start: 0.5rem;
+
+        align-items: center;
+        flex-direction: row;
+
+        border-inline-start: 0;
+        border-block-start: 2px dashed var(--color-border);
+      }
+
       .rating {
         margin-block-end: auto;
         margin-inline: auto;
+
+        @media screen and (max-width: 1024px) {
+          margin: 0;
+        }
 
         .icon {
           color: var(--color-star);
@@ -132,6 +156,10 @@
       .caption {
         font-size: var(--fz-300);
         text-align: center;
+
+        @media screen and (max-width: 1024px) {
+          flex-grow: 1;
+        }
       }
 
       a {

@@ -8,11 +8,17 @@
 
   margin-block: 2rem;
 
+  @media screen and (max-width: 1024px) {
+    grid-template-areas: "search search" "filters toolbar" "filters results";
+  }
+
   .search {
     grid-area: search;
   }
 
   .filters {
+    min-inline-size: 12rem;
+
     grid-area: filters;
 
     display: grid;

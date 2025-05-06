@@ -52,7 +52,7 @@ export default function ExpertiseFilterComponent(): ReactElement {
   const searchParams = useSearchParams();
   const buttonClickHandler = (value: string): void => {
     router.push(
-      pathname + `?${createQueryString(searchParams, "expertise", value)}`,
+      pathname + `?${createQueryString(searchParams, "expertise", value)}`
     );
   };
 

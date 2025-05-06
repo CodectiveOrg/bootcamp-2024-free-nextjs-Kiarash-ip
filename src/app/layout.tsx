@@ -6,6 +6,7 @@ import FooterComponent from "@/components/footer/footer.component";
 
 import "@/styles/typography.css";
 import "./globals.css";
+import ToasterComponent from "@/components/toaster/toaster.component";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic", "latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
           نوبت دهی پزشکی، سامانه نوبت دهی اینترنتی بیمارستان و پزشکان
         </p>
         <FooterComponent />
+        <ToasterComponent />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 export const createQueryString = (
   searchParams: URLSearchParams,
   name: string,
-  value: string,
+  value: string
 ) => {
   const params = new URLSearchParams(searchParams.toString());
   params.set(name, value);
@@ -10,7 +10,7 @@ export const createQueryString = (
 
 export const deleteQueryString = (
   searchParams: URLSearchParams,
-  name: string,
+  name: string
 ) => {
   const params = new URLSearchParams(searchParams.toString());
   params.delete(name);

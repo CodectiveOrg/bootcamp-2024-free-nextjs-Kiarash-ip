@@ -6,24 +6,32 @@ import SearchLine from "@/icons/SearchLine";
 import LocationLine from "@/icons/LocationLine";
 
 import styles from "./search-box.module.css";
-import { useRouter, useSearchParams } from "next/navigation";
-import { createQueryString, deleteQueryString } from "@/utils/utils";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-export default function SearchBoxComponent(): ReactElement {
+export default function SearchBoxComponent({ q }: { q: string }): ReactElement {
   const searchParams = useSearchParams();
-  const q = searchParams.get("q") || "";
   const [search, setSearch] = useState(q);
   const router = useRouter();
+  const pathname = usePathname();
 
   function formSubmitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     let query = "";
+
+    const params = new URLSearchParams(searchParams.toString());
     if (search.trim().length === 0) {
-      query = deleteQueryString(searchParams, "q");
+      params.delete("q");
     } else {
-      query = createQueryString(searchParams, "q", search);
+      params.set("q", search);
     }
-    router.push("/search" + `?${query}`);
+    router.push(`${pathname}?${params.toString()}`);
+
+    // if (search.trim().length === 0) {
+    //   query = deleteQueryString(searchParams, "q");
+    // } else {
+    //   query = createQueryString(searchParams, "q", search);
+    // }
+    // router.push("/search" + `?${query}`);
   }
 
   return (
