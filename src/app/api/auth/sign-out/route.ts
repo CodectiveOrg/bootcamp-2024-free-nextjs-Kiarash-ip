@@ -4,6 +4,8 @@ import { ApiResponseType } from "@/types/api-response.type";
 
 import { removeAuthCookie, wrapWithTryCatch } from "@/utils/api.utils";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(): Promise<ApiResponseType<null>> {
   return wrapWithTryCatch(async () => {
     await removeAuthCookie();

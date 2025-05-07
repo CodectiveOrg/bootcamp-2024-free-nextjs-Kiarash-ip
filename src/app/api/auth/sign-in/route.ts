@@ -9,6 +9,8 @@ import { ApiResponseType } from "@/types/api-response.type";
 import { parseBody, setAuthCookie, wrapWithTryCatch } from "@/utils/api.utils";
 import { comparePassword } from "@/utils/bcrypt.utils";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request: Request): Promise<ApiResponseType<null>> {
   return wrapWithTryCatch(async () => {
     const [parseError, body] = await parseBody<SignInDto>(request);
@@ -24,14 +26,14 @@ export async function POST(request: Request): Promise<ApiResponseType<null>> {
     if (!foundUser) {
       return NextResponse.json(
         { error: "کاربری با این مشخصات پیدا نشد." },
-        { status: 404 },
+        { status: 404 }
       );
     }
 
     if (!(await comparePassword(body.password, foundUser.password))) {
       return NextResponse.json(
         { error: "رمز عبور اشتباه است." },
-        { status: 401 },
+        { status: 401 }
       );
     }
 
