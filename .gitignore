@@ -38,3 +38,7 @@ next-env.d.ts
 
 .idea/
 .vscode/
+
+# System directories
+Application Data/
+**/Application Data/

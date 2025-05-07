@@ -6,20 +6,16 @@ import MyDoctorLogo from "@/logo/my-doctor.logo";
 
 import styles from "./page.module.css";
 
-export default function Home({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}): ReactElement {
+export default function Home(): ReactElement {
   return (
     <div className={styles.home}>
       <h1>
         <MyDoctorLogo />
         دکتر من
       </h1>
-      {/* <Suspense> */}
-      <SearchBoxComponent q={searchParams.q as string} />
-      {/* </Suspense> */}
+      <Suspense>
+        <SearchBoxComponent />
+      </Suspense>
       <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>

@@ -9,6 +9,9 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    outputFileTracingIgnores: ["./src/generated/client/**/*"],
+  },
 };
 
 export default nextConfig;

@@ -11,17 +11,13 @@ import ResultsComponent from "./components/results/results.component";
 
 import styles from "./page.module.css";
 
-export default function Page({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default function Page() {
   return (
     <div className={styles.page}>
       <div className={styles.search}>
-        {/* <Suspense> */}
-        <SearchBoxComponent q={searchParams.q as string} />
-        {/* </Suspense> */}
+        <Suspense>
+          <SearchBoxComponent />
+        </Suspense>
       </div>
       <div className={styles.filters}>
         <Suspense>
