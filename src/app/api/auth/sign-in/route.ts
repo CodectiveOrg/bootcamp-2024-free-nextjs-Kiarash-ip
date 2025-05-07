@@ -9,7 +9,7 @@ import { ApiResponseType } from "@/types/api-response.type";
 import { parseBody, setAuthCookie, wrapWithTryCatch } from "@/utils/api.utils";
 import { comparePassword } from "@/utils/bcrypt.utils";
 
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 export async function POST(request: Request): Promise<ApiResponseType<null>> {
   return wrapWithTryCatch(async () => {
