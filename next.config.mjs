@@ -9,9 +9,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    outputFileTracingIgnores: ["./src/generated/client/**/*"],
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
