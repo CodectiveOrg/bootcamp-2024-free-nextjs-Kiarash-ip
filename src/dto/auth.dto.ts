@@ -1,4 +1,4 @@
-import Prisma from "@prisma/client";
+import { Prisma } from "@/generated/client";
 
-export type SignUpDto = Omit<Prisma.User, "id">;
-export type SignInDto = Pick<Prisma.User, "username" | "password">;
+export type SignUpDto = Omit<Prisma.UserCreateInput, "id">;
+export type SignInDto = Pick<Prisma.UserCreateInput, "username" | "password">;
