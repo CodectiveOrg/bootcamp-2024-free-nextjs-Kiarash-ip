@@ -24,7 +24,7 @@ export async function POST(request: Request): Promise<ApiResponseType<null>> {
     if (foundUser) {
       return NextResponse.json(
         { error: "نام کاربری تکراری است." },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -37,7 +37,14 @@ export async function POST(request: Request): Promise<ApiResponseType<null>> {
     }
 
     const hashedPassword = await hashPassword(body.password);
-    await prisma.user.create({ data: { ...body, password: hashedPassword } });
+    await prisma.user.create({
+      data: {
+        name: body.name,
+        username: body.username,
+        email: body.email,
+        password: hashedPassword,
+      },
+    });
 
     await setAuthCookie();
 
