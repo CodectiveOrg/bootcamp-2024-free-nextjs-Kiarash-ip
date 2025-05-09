@@ -1,0 +1,50 @@
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  background-color: transparent;
+
+  font-size: 0.75rem;
+  text-wrap: nowrap;
+
+  padding: 0.375rem 0.75rem;
+
+  border-radius: calc(var(--border-radius) * 2);
+
+  border: 1px solid var(--color-border);
+
+  .icon {
+    font-size: 1rem;
+  }
+
+  .removeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    inline-size: 1rem;
+    block-size: 1rem;
+
+    background-color: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: inherit;
+  }
+
+  &.first {
+    order: 0;
+  }
+
+  &.active {
+    color: var(--color-primary-darker);
+
+    border-color: var(--color-primary);
+
+    background-color: var(--color-primary-fade);
+  }
+}

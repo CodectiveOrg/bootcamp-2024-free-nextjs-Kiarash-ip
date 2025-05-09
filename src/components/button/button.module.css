@@ -100,4 +100,9 @@
 
     font-weight: 700;
   }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

@@ -8,6 +8,11 @@
 
   padding-block: 1rem;
 
+  @media screen and (max-width: 768px) {
+    grid-template-areas: "writings" "visuals" "copy";
+    row-gap: 1rem;
+  }
+
   .writings {
     grid-area: writings;
 
@@ -29,6 +34,8 @@
     .certificates {
       display: flex;
       gap: 2rem;
+
+      color: var(--color-text-700);
     }
 
     .socials {

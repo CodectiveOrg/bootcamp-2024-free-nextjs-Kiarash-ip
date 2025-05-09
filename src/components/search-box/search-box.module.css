@@ -19,8 +19,14 @@
     font-size: 1.5em;
   }
 
-  input {
+  .inputContainer {
+    position: relative;
+
     flex: 1 1 0;
+  }
+
+  input {
+    inline-size: 100%;
 
     background-color: transparent;
 
@@ -31,6 +37,26 @@
     &:focus {
       outline: none;
     }
+  }
+
+  .clear {
+    all: unset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    padding: 0.5rem;
+
+    cursor: pointer;
+
+    color: var(--color-gray-40);
   }
 
   .divider {

@@ -2,14 +2,12 @@
 
 import { ChangeEvent, ReactElement } from "react";
 
-import CardComponent from "@/components/card/card.component";
-
 import { SelectOptionType } from "@/types/select-option.type";
 
 import styles from "./radio-filter.module.css";
 
 type Props = {
-  title: string;
+  title?: string;
   name: string;
   options: SelectOptionType[];
   value?: string;
@@ -28,22 +26,20 @@ export default function RadioFilterComponent({
   };
 
   return (
-    <CardComponent>
-      <div className={styles["radio-filter"]}>
-        <div className={styles.title}>{title}</div>
-        {options.map((x) => (
-          <label key={x.value}>
-            <input
-              type="radio"
-              name={name}
-              value={x.value}
-              checked={x.value === value}
-              onChange={inputChangeHandler}
-            />
-            {x.label}
-          </label>
-        ))}
-      </div>
-    </CardComponent>
+    <div className={styles["radio-filter"]}>
+      {title ? <div className={styles.title}>{title}</div> : null}
+      {options.map((x) => (
+        <label key={x.value}>
+          <input
+            type="radio"
+            name={name}
+            value={x.value}
+            checked={x.value === value}
+            onChange={inputChangeHandler}
+          />
+          {x.label}
+        </label>
+      ))}
+    </div>
   );
 }

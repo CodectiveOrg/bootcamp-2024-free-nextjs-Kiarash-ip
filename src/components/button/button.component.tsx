@@ -7,6 +7,7 @@ import Link from "next/link";
 import clsx from "clsx";
 
 import styles from "./button.module.css";
+import SpinnerComponent from "../spinner/spinner.component";
 
 export type ButtonVariant = "default" | "primary" | "danger";
 export type ButtonShape = "inherit" | "solid" | "outlined";
@@ -18,6 +19,7 @@ type CommonProps = {
   shape?: ButtonShape;
   size?: ButtonSize;
   position?: ButtonPosition;
+  isLoading?: boolean;
 };
 
 type ButtonComponentProps = ComponentProps<"button"> & CommonProps;
@@ -31,21 +33,24 @@ export function ButtonComponent({
   position = "default",
   className,
   children,
+  isLoading,
   ...otherProps
 }: ButtonComponentProps): ReactElement {
   return (
     <button
+      disabled={isLoading}
       className={clsx(
         styles.button,
         styles[variant],
         styles[shape],
         styles[size],
         styles[position],
-        className
+        className,
       )}
       {...otherProps}
     >
       {children}
+      {isLoading && <SpinnerComponent />}
     </button>
   );
 }
@@ -69,7 +74,7 @@ export function ButtonLinkComponent({
         styles[shape],
         styles[size],
         styles[position],
-        className
+        className,
       )}
       {...otherProps}
     >

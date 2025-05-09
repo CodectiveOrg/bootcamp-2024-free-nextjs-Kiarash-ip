@@ -16,13 +16,13 @@ export default function Home(): ReactElement {
       <Suspense>
         <SearchBoxComponent />
       </Suspense>
-      <div className={styles.history}>
+      {/* <div className={styles.history}>
         <div className={styles.title}>آخرین جستجوهای شما</div>
         <ul>
           <li>ارتوپد</li>
           <li>قلب و عروق</li>
         </ul>
-      </div>
+      </div> */}
     </div>
   );
 }

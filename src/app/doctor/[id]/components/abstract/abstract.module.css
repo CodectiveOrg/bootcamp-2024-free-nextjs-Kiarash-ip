@@ -9,6 +9,11 @@
     align-items: start;
     column-gap: 0.5rem;
 
+    @media (max-width: 768px) {
+      grid-template-areas: "image name" "image mc" "image experience" "rating rating";
+      grid-template-columns: auto 1fr;
+    }
+
     .image {
       grid-area: image;
 

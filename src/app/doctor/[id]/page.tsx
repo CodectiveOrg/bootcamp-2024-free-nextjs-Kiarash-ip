@@ -30,10 +30,16 @@ export default async function Doctor({ params }: Props) {
 
   return (
     <div className={styles.page}>
-      <div className={styles.info}>
+      <div className={styles.header}>
         <AbstractComponent doctor={doctor} />
+      </div>
+      <div className={styles.about}>
         <AboutComponent doctor={doctor} />
+      </div>
+      <div className={styles.activities}>
         <ActivitiesComponent doctor={doctor} />
+      </div>
+      <div className={styles.comments}>
         <CommentsComponent
           name={doctor.name}
           comments={doctor.comments}

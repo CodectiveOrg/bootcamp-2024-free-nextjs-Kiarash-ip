@@ -7,7 +7,6 @@ import { ReactElement, useCallback, useMemo } from "react";
 import CardComponent from "@/components/card/card.component";
 
 import styles from "./filters-summary.module.css";
-import { deleteQueryString } from "@/utils/utils";
 
 export default function FiltersSummaryComponent(): ReactElement | null {
   const router = useRouter();
@@ -28,7 +27,9 @@ export default function FiltersSummaryComponent(): ReactElement | null {
 
   const filterClickHandler = useCallback(
     (name: string) => {
-      router.push(pathname + `?${deleteQueryString(searchParams, name)}`);
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete(name);
+      router.push(`${pathname}?${params.toString()}`);
     },
     [pathname, searchParams, router],
   );

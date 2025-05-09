@@ -19,7 +19,7 @@ export default function Page(): ReactElement {
       {
         method: "POST",
       },
-      "به امید دیدار!",
+      "خارج شدید!",
     );
 
     if (result.error) {
@@ -32,6 +32,7 @@ export default function Page(): ReactElement {
   return (
     <div className={styles.page}>
       <h1>داشبورد</h1>
+      <p>در حال آپدیت...</p>
       <ButtonComponent variant="danger" onClick={signOutButtonClickHandler}>
         خروج
       </ButtonComponent>

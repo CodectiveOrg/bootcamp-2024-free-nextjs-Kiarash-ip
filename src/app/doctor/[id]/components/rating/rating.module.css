@@ -4,6 +4,11 @@
   gap: 0.25rem;
   font-size: var(--fz-300);
 
+  @media (max-width: 768px) {
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
   .average-rating {
     background-color: var(--color-success);
     padding: 0.15rem 0.5rem;

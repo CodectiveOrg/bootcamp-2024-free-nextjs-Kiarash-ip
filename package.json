@@ -21,13 +21,16 @@
     "next": "14.2.18",
     "react": "^18",
     "react-dom": "^18",
-    "react-toastify": "^11.0.5"
+    "react-scan": "^0.3.3",
+    "react-toastify": "^11.0.5",
+    "react-transition-group": "^4.4.5"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-transition-group": "^4.4.12",
     "eslint": "^8",
     "eslint-config-next": "14.2.18",
     "postcss": "^8.4.49",

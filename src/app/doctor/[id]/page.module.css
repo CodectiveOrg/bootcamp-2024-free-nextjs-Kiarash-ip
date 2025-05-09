@@ -1,14 +1,44 @@
 .page {
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-template-areas: "header actions" "about actions" "activities actions" "comments actions";
   gap: 1rem;
 
   margin-block: 2rem;
 
-  .info,
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "actions" "about" "activities" "comments";
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .about {
+    grid-area: about;
+  }
+
+  .activities {
+    grid-area: activities;
+  }
+
+  .comments {
+    grid-area: comments;
+  }
+
+  .actions {
+    grid-area: actions;
+
+    & > div:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* .info,
   .actions {
     display: grid;
     align-content: start;
     gap: 2rem;
-  }
+  } */
 }

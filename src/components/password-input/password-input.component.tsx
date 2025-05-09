@@ -18,7 +18,7 @@ type Props = ComponentProps<typeof NormalInputComponent>;
 
 function PasswordInputComponent(
   { ...otherProps }: Props,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ): ReactElement {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 

@@ -26,6 +26,7 @@ const NAVIGATION_MENU = [
 
 export default function HeaderComponent(): ReactElement {
   const pathname = usePathname();
+  const isAuthPage = pathname.includes("/auth");
 
   return (
     <header className={styles.header}>
@@ -43,14 +44,16 @@ export default function HeaderComponent(): ReactElement {
           ))}
         </ul>
       </nav>
-      <ButtonLinkComponent
-        variant="primary"
-        shape="outlined"
-        className={styles.cta}
-        href="/auth/sign-in"
-      >
-        ورود | ثبت‌نام
-      </ButtonLinkComponent>
+      {!isAuthPage && (
+        <ButtonLinkComponent
+          variant="primary"
+          shape="outlined"
+          className={styles.cta}
+          href="/auth/sign-in"
+        >
+          ورود | ثبت‌نام
+        </ButtonLinkComponent>
+      )}
     </header>
   );
 }

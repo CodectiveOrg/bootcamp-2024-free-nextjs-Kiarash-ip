@@ -130,6 +130,10 @@
         border-block-start: 2px dashed var(--color-border);
       }
 
+      @media screen and (max-width: 640px) {
+        flex-wrap: wrap;
+      }
+
       .rating {
         margin-block-end: auto;
         margin-inline: auto;
@@ -173,6 +177,10 @@
         font-weight: 900;
 
         text-align: center;
+
+        @media screen and (max-width: 640px) {
+          flex-grow: 1;
+        }
       }
     }
   }

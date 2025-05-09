@@ -26,7 +26,7 @@ export async function POST(request: Request): Promise<ApiResponseType<null>> {
     if (foundUser) {
       return NextResponse.json(
         { error: "نام کاربری تکراری است." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 

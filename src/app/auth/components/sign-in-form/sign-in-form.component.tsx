@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, ReactElement, useRef } from "react";
+import { FormEvent, ReactElement, useRef, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -22,14 +22,16 @@ import { fetchWithToast } from "@/utils/fetch-utils";
 import styles from "@/app/auth/styles/auth-form.module.css";
 
 export default function SignInFormComponent(): ReactElement {
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const formRef = useRef<HTMLFormElement>(null);
 
   const formSubmitHandler = async (
-    e: FormEvent<HTMLFormElement>
+    e: FormEvent<HTMLFormElement>,
   ): Promise<void> => {
     e.preventDefault();
+    setIsLoading(true);
 
     const formData = new FormData(e.currentTarget);
 
@@ -44,8 +46,10 @@ export default function SignInFormComponent(): ReactElement {
         method: "POST",
         body: JSON.stringify(dto),
       },
-      "خوش آمدید!"
-    );
+      "خوش آمدید!",
+    ).finally(() => {
+      setIsLoading(false);
+    });
 
     if (result.error) {
       return;
@@ -73,7 +77,9 @@ export default function SignInFormComponent(): ReactElement {
                 name="password"
                 autoComplete="current-password"
               />
-              <ButtonComponent variant="primary">ورود</ButtonComponent>
+              <ButtonComponent variant="primary" isLoading={isLoading}>
+                ورود
+              </ButtonComponent>
             </form>
             <div className={styles["change-form"]}>
               قبلاً ثبت‌نام نکردید؟
