@@ -18,10 +18,14 @@ export default function Page() {
             <SearchBoxComponent />
           </Suspense>
         </div>
-        <FilterBadges />
+        <Suspense>
+          <FilterBadges />
+        </Suspense>
       </div>
       <div className={styles.filters}>
-        <FiltersSideBar />
+        <Suspense>
+          <FiltersSideBar />
+        </Suspense>
       </div>
       <div className={styles.toolbar}>
         <SortComponent />
